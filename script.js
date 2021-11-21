@@ -1,9 +1,5 @@
 /* This file is where all your work should go for Assignment 2.  Please remove this comment. */
 
-// function cleanUpIndex() {
-//     const contactboxes = document.querySelector('div');
-//     contactboxes.remove("");
-// }
 
 function cleanUpIndex() {
     boxes = document.querySelectorAll('.contact');
@@ -32,22 +28,22 @@ let contactList = [
 
 function createSingleIndex(contact) {
 
-
-    // let name = document.createElement('p');
-    // name.textContent = contactList["name"];
     let main = document.querySelectorAll('.main');
 
-    let createA = document.createElement('a');
-    let createDiv = document.createElement('div');
-    let createP = document.createElement('p')
+    let atag = document.createElement('a');
+    let divtag = document.createElement('div');
+    let ptag = document.createElement('p')
 
-    createP.append(contact);
-    createDiv.appendChild(createP);
-    createDiv.classList.add("contact");
+    ptag.append(contact.name);
+    divtag.appendChild(ptag);
+    divtag.classList.add("contact");
+    atag.appendChild(divtag);
+    atag.href = "page3.html";
 
-    createA.appendChild(createDiv);
-    createA.href = "page3.html";
-
-    main[0].appendChild(createA);
+    main[0].appendChild(atag);
 };
+
+function cleanUpView() {
+
+}
 
