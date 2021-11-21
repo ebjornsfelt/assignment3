@@ -44,6 +44,7 @@ function createSingleIndex(contact) {
 };
 
 function cleanUpView() {
-
+    contactinfo = document.querySelectorAll('.contactinfo');
+    for(let i = 0; i < contactinfo.length; i++) { contactinfo[i].remove(); }
 }
 
