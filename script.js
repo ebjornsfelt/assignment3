@@ -43,7 +43,7 @@ createcontactclick.addEventListener("click", function (event) {
     } else if (create.length != 0) {
         cleanUpCreate()
     }
-    renderCreate(contactList[0]);
+    renderCreate(contactList);
 }
 );
 
@@ -290,4 +290,31 @@ function renderCreate(cont) {
     contedit.appendChild(form);
 
     main[0].appendChild(contedit);
+
+    cancelbutton.addEventListener("click", function (event) {
+        event.preventDefault();
+        cleanUpCreate();
+        renderIndex(contactList)
+
+    });
+
+
+    savebutton.addEventListener("click", function (event) {
+        event.preventDefault();
+        let userform = document.querySelector("form");
+        let userformname = userform.elements[0].value;
+        let userformphone = userform.elements[1].value;
+        let userformaddress = userform.elements[2].value;
+        let userformemail = userform.elements[3].value;
+        let userforminfo = {
+            name: userformname,
+            phone: userformphone,
+            address: userformaddress,
+            email: userformemail,
+        };
+        contactList.push(userforminfo)
+
+        cleanUpCreate();
+        renderView(contactList);
+    });
 }
