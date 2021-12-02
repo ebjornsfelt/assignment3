@@ -1,12 +1,3 @@
-/* This file is where all your work should go for Assignment 2.  Please remove this comment. */
-
-
-function cleanUpIndex() {
-    boxes = document.querySelectorAll('.contact');
-    for(let i = 0; i < boxes.length; i++) { boxes[i].remove(); }
-
-}
-
 let contactList = [
     {
       name: "Roberta Dobbs",
@@ -22,8 +13,49 @@ let contactList = [
     },
 ];
 
+let contactclick = document.querySelector("#contactshome");
+contactclick.addEventListener("click", function (event) {
+    event.preventDefault();
+    let index = document.querySelectorAll(".contact")
+    let view = document.querySelectorAll(".contactinfo");
+    let create = document.querySelectorAll(".contactedit")
+    if (index.length != 0) {
+        cleanUpIndex();
+    }    else if (view.length != 0) {
+        cleanUpView();
+    } else if (create.length != 0) {
+        cleanUpCreate()
+    }
+    renderIndex(contactList)
+}
+);
+
+let createcontactclick = document.querySelector("#newcontact")
+createcontactclick.addEventListener("click", function (event) {
+    event.preventDefault();
+    let index = document.querySelectorAll(".contact")
+    let view = document.querySelectorAll(".contactinfo");
+    let create = document.querySelectorAll(".contactedit")
+    if (index.length != 0) {
+        cleanUpIndex();
+    }    else if (view.length != 0) {
+        cleanUpView();
+    } else if (create.length != 0) {
+        cleanUpCreate()
+    }
+    renderCreate(contactList[0]);
+}
+);
 
 
+
+
+
+function cleanUpIndex() {
+    boxes = document.querySelectorAll('.contact');
+    for(let i = 0; i < boxes.length; i++) { boxes[i].remove(); }
+
+}
 
 
 function createSingleIndex(cont) {
