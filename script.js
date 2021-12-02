@@ -73,7 +73,12 @@ function createSingleIndex(cont) {
     atag.href = "page3.html";
 
     main[0].appendChild(atag);
-};
+    atag.addEventListener("click", function (event) {
+        event.preventDefault();
+        cleanUpIndex();
+        renderView(cont)
+    });
+}
 
 function renderIndex(boxes) {
     let main = document.querySelectorAll('.main');
@@ -150,6 +155,12 @@ function renderView(cont) {
     divButtons.appendChild(buttonClose);
 
     infodiv.appendChild(divButtons);
+
+    buttonClose.addEventListener("click", function (event) {
+        event.preventDefault();
+        cleanUpView();
+        renderIndex(contactList);
+    });
 
 }
 
