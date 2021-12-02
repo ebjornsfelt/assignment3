@@ -2,7 +2,7 @@
 
 
 function cleanUpIndex() {
-    boxes = document.querySelectorAll('.cont');
+    boxes = document.querySelectorAll('.contact');
     for(let i = 0; i < boxes.length; i++) { boxes[i].remove(); }
 
 }
@@ -36,7 +36,7 @@ function createSingleIndex(cont) {
 
     ptag.append(cont.name);
     divtag.appendChild(ptag);
-    divtag.classList.add("cont");
+    divtag.classList.add("contact");
     atag.appendChild(divtag);
     atag.href = "page3.html";
 
@@ -51,7 +51,7 @@ function renderIndex(boxes) {
         let ptag = document.createElement('p')
         ptag.append(boxes[i].name);
         divtag.appendChild(ptag);
-        divtag.classList.add("cont");
+        divtag.classList.add("contact");
         atag.appendChild(divtag);
         atag.href = "page3.html";
         main[0].appendChild(atag);
@@ -59,7 +59,6 @@ function renderIndex(boxes) {
 
 
 }
-
 
 
 function cleanUpView() {
