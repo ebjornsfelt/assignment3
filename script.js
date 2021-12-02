@@ -1,3 +1,6 @@
+
+
+
 let contactList = [
     {
       name: "Roberta Dobbs",
@@ -10,8 +13,7 @@ let contactList = [
       phone: "123-867-5309",
       address: "Warner Brothers Animation Lot",
       email: "whatsup@doc.example.com",
-    },
-];
+    }];
 
 let contactclick = document.querySelector("#contactshome");
 contactclick.addEventListener("click", function (event) {
@@ -318,3 +320,14 @@ function renderCreate(cont) {
         renderView(contactList);
     });
 }
+
+
+
+
+
+
+
+
+
+
+
